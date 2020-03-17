@@ -78,7 +78,54 @@
 $(document).ready(function() {
 
 // Your code here...
+var num1 = "";
+var num2 = "";
+var operator = "";
+var total = "";
+var firstInput = false;
 
+// $(".number").click(function(event) {
+//   console.log(event);
+// });
+$(".btn").click(function(event) {
+        var key = $(this).attr("value")
+        //var every = $(this).attr("class")
+        console.log(key);
+        //console.log(every);
+
+        if (firstInput === false && $(this).hasClass("number") )  {
+          num1 += key 
+          console.log(num1)
+        
+        }else if($(this).hasClass("operator")){
+          operator = key
+          firstInput = true
+
+        }else if(firstInput === true && $(this).hasClass("number")){
+         num2 += key
+        }else if(key === "equals"){
+          switch(key) {
+        case "plus": 
+    console.log(num1+num2)
+         break;
+        case "minus":
+        console.log(num1-num2)
+        break;
+        case "times": 
+        console.log(num1*num2)
+         break;
+         case "divide": 
+         console.log(num1/num2)
+         break;
+         case "power": 
+         console.log(num1**num2)
+         break;
+        
+} 
+        }
+
+
+      });
 
 });
 
